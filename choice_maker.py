@@ -1,20 +1,5 @@
 # A program to helps make choices.
 
-"""
-Features:
-	This program has a Japanese translation (for anyone that doesn't know Japanese).
-	This program can be used for randomizing any number of choices.
-	This program can be used with any kind of choices, numbers, words, names, special characters etc.
-	This program handles any incorrect inputs and provides correct format for input.		
-	The code is written in a way that is self explanatory and therefore no comments are needed.
-	This program is free for anyone to use, modify and distribute.
-	
-
-Planned Features:
-	Add an option to select the number of times the list is randomized before result is outputted.
-	Display percentage for the wins of each result.
-"""
-
 import random
 import time
 import sys
@@ -24,12 +9,15 @@ def main():
 	language = str(input("> ")	)
 	choice_number = 1
 	list_of_choices = []
+	
 	if language == "":
 		try:
 			print("Press ctrl+c to quit!")
+			
 			while True:
 				choices = int(input("How many choices are there? "))
 				print(f"You selected {choices} choices")
+				
 				for n_of_choices in range(choices):
 					choice = str(input(f"What is your {choice_number} choice? "))
 					choice_number += 1
@@ -38,20 +26,25 @@ def main():
 				result = random.choice(list_of_choices)
 				print(f"Here's the result! {result}")
 				break
+		
 		except KeyboardInterrupt:
 		    print("\nQuitting...")
 		    time.sleep(1)
 		    print("Successfully Exited")
 		    sys.exit()
+		
 		except ValueError:
 		    print("Please type a number!\n")
 		    main()
+	
 	elif language == "JP".lower():
 		try:
 			print("ctrl+cでいつでもプログラムを終了できます。")
+			
 			while True:
 				choices = int(input("選択肢の数を指定して下さい。"))
 				print(f"あなたは {choices} の選択肢を選んだ。")
+				
 				for n_of_choices in range(choices):
 					choice = str(input(f"{choice_number} の選択は？ "))
 					choice_number += 1
@@ -60,14 +53,17 @@ def main():
 				result = random.choice(list_of_choices)
 				print(f"これが結果です！ {result}")
 				break
+		
 		except KeyboardInterrupt:
 		    print("\n終了しています...")
 		    time.sleep(1)
 		    print("終了完了！")
 		    sys.exit()
+		
 		except ValueError:
 		    print("数字を入れて下さい！\n")
 		    main()
+	
 	else:
 		print("\nType JP or press enter for English!")
 		main()
