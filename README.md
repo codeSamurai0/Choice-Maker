@@ -16,5 +16,5 @@ Features:
  Planned Features:
  <ol>
 	<li>Add an option to select the number of times the list is randomized before result is outputted.</li>
-	<li>Display percentage for the wins of each result.</li>
+	<li>Display percentage for the wins of each choice.</li>
  </ol>
